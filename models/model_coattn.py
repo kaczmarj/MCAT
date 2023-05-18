@@ -471,7 +471,12 @@ def multi_head_attention_forward(
 
 import torch
 from torch import Tensor
-from torch.nn.modules.linear import _LinearWithBias
+try:
+    # This works with older pytorch. See
+    # https://github.com/pytorch/pytorch/commit/0896c6b1f091e696f40742d3529a4c05f81718f4
+    from torch.nn.modules.linear import _LinearWithBias
+except ImportError:
+    from torch.nn.modules.linear import NonDynamicallyQuantizableLinear as _LinearWithBias
 from torch.nn.init import xavier_uniform_
 from torch.nn.init import constant_
 from torch.nn.init import xavier_normal_
