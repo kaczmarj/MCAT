@@ -326,8 +326,8 @@ class Generic_Split(Generic_MIL_Survival_Dataset):
         self.genomic_features = self.slide_data.drop(self.metadata, axis=1)
         self.signatures = signatures
 
-        with open(os.path.join(data_dir, 'fast_cluster_ids.pkl'), 'rb') as handle:
-            self.fname2ids = pickle.load(handle)
+        # with open(os.path.join(data_dir, 'fast_cluster_ids.pkl'), 'rb') as handle:
+        #     self.fname2ids = pickle.load(handle)
 
         def series_intersection(s1, s2):
             return pd.Series(list(set(s1) & set(s2)))
