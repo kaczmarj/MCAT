@@ -341,7 +341,7 @@ if "survival" in args.task:
         csv_path="./%s/%s_all_clean.csv.zip" % (args.dataset_path, combined_study),
         mode=args.mode,
         apply_sig=args.apply_sig,
-        data_dir=args.data_root_dir),
+        data_dir=args.data_root_dir,
         shuffle=False,
         seed=args.seed,
         print_info=True,
