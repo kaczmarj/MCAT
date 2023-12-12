@@ -141,7 +141,10 @@ class MIL_Attention_FC_surv(nn.Module):
         """
         super(MIL_Attention_FC_surv, self).__init__()
         self.fusion = fusion
-        self.size_dict_path = {"small": [1024, 512, 256], "big": [1024, 512, 384]}
+        self.size_dict_path = {
+            "small": [embedding_size, 512, 256],
+            "big": [embedding_size, 512, 384],
+        }
         self.size_dict_omic = {"small": [256, 256]}
 
         ### Deep Sets Architecture Construction
@@ -251,7 +254,10 @@ class MIL_Cluster_FC_surv(nn.Module):
             n_classes (int): Output shape of NN
         """
         super(MIL_Cluster_FC_surv, self).__init__()
-        self.size_dict_path = {"small": [1024, 512, 256], "big": [1024, 512, 384]}
+        self.size_dict_path = {
+            "small": [embedding_size, 512, 256],
+            "big": [embedding_size, 512, 384],
+        }
         self.size_dict_omic = {"small": [256, 256]}
         self.num_clusters = num_clusters
         self.fusion = fusion
