@@ -157,7 +157,7 @@ def Reg_Block(dim1, dim2, dropout=0.25):
 
 
 class Attn_Net_Gated(nn.Module):
-    def __init__(self, L=1024, D=256, dropout=False, n_classes=1):
+    def __init__(self, L=768, D=256, dropout=False, n_classes=1):
         r"""
         Attention Network with Sigmoid Gating (3 fc layers)
 
