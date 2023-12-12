@@ -271,6 +271,9 @@ parser.add_argument(
     "--early_stopping", action="store_true", default=False, help="Enable early stopping"
 )
 parser.add_argument("--inst_loss")
+parser.add_argument(
+    "--testing", action="store_true", default=False, help="Enable testing"
+)
 
 args = parser.parse_args()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
