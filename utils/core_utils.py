@@ -492,7 +492,7 @@ def summary_survival(model, loader, n_classes):
         with torch.no_grad():
             hazards, survival, Y_hat, _, _ = model(x_path=data_WSI, x_omic=data_omic)
 
-        risk = np.asscalar(-torch.sum(survival, dim=1).cpu().numpy())
+        risk = -torch.sum(survival, dim=1).cpu().numpy().item()
         event_time = np.asscalar(event_time)
         c = np.asscalar(c)
         all_risk_scores[batch_idx] = risk
